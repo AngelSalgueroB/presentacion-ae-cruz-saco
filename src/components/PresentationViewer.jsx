@@ -9,6 +9,25 @@ const PresentationViewer = () => {
   const slidesRef = useRef([]);
   const containerRef = useRef(null);
 
+  React.useEffect(() => {
+        const handleKeyDown = (e) => {
+            // Si no estamos exportando el PDF, permitimos el cambio de slide
+            if (!isExporting) {
+                if (e.key === 'ArrowRight' || e.code === 'Space') {
+                    // Flecha derecha o Espacio = Siguiente
+                    setCurrentSlide(prev => (prev < slides.length - 1 ? prev + 1 : prev));
+                } else if (e.key === 'ArrowLeft') {
+                    // Flecha izquierda = Anterior
+                    setCurrentSlide(prev => (prev > 0 ? prev - 1 : prev));
+                }
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        // Limpiamos el evento al desmontar
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isExporting])
+
   // --- TEMA SEMI-OSCURO TECNOLÓGICO ---
   const theme = {
     bgMain: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",

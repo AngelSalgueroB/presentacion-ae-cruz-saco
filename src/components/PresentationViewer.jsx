@@ -265,7 +265,7 @@ const PresentationViewer = () => {
               fontWeight: "bold",
             }}
           >
-            Identificación de brechas operativas (Capítulo I):
+            Identificación de brechas operativas:
           </p>
           <div
             style={{
@@ -853,7 +853,7 @@ const PresentationViewer = () => {
     {
       id: 6,
       layout: "full",
-      title: "Marco Metodológico y Estándares (Capítulo II)",
+      title: "Marco Metodológico y Estándares",
       content: (
         <div
           style={{
@@ -1054,7 +1054,7 @@ const PresentationViewer = () => {
               lineHeight: "1.6",
             }}
           >
-            El nuevo entorno digital centraliza la operación (Capítulo III):
+            El nuevo entorno digital centraliza la operación:
           </p>
           <div
             style={{
@@ -1282,7 +1282,7 @@ const PresentationViewer = () => {
     {
       id: 8,
       layout: "full",
-      title: "Plan de Migración y Roadmap (Capítulo IV)",
+      title: "Plan de Migración y Roadmap",
       content: (
         <div
           style={{

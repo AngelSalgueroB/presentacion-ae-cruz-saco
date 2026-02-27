@@ -1499,21 +1499,63 @@ const PresentationViewer = () => {
     {
       id: 9,
       layout: "full",
-      title: "Conclusiones del Proyecto",
+      title: "Resultados Esperados y Conclusiones del Proyecto",
       content: (
         <div
           style={{
             display: "flex",
+            flexDirection: "column",
             height: "100%",
-            alignItems: "center",
             justifyContent: "center",
+            gap: "20px",
           }}
         >
+          {/* NUEVA SECCIÓN: KPIs BASADOS EN FIGURA 3.6 DEL DOC */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '15px' }}>
+            
+            <div style={{ background: theme.bgPanel, border: `1px solid rgba(56, 189, 248, 0.4)`, padding: '15px', borderRadius: '12px', backdropFilter: theme.glassFilter, textAlign: 'center' }}>
+                <h4 style={{ color: theme.textGray, fontSize: '13px', margin: '0 0 10px 0' }}>Tiempo de Matrícula</h4>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
+                    <span style={{ color: theme.danger, textDecoration: 'line-through', fontSize: '14px' }}>45 min</span>
+                    <span style={{ color: theme.textGray }}>→</span>
+                    <span style={{ color: theme.primary, fontSize: '20px', fontWeight: 'bold' }}>5 min</span>
+                </div>
+            </div>
+
+            <div style={{ background: theme.bgPanel, border: `1px solid rgba(167, 139, 250, 0.4)`, padding: '15px', borderRadius: '12px', backdropFilter: theme.glassFilter, textAlign: 'center' }}>
+                <h4 style={{ color: theme.textGray, fontSize: '13px', margin: '0 0 10px 0' }}>Errores de Cobranza</h4>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
+                    <span style={{ color: theme.danger, textDecoration: 'line-through', fontSize: '14px' }}>12%</span>
+                    <span style={{ color: theme.textGray }}>→</span>
+                    <span style={{ color: theme.accent, fontSize: '20px', fontWeight: 'bold' }}>&lt; 1%</span>
+                </div>
+            </div>
+
+            <div style={{ background: theme.bgPanel, border: `1px solid rgba(56, 189, 248, 0.4)`, padding: '15px', borderRadius: '12px', backdropFilter: theme.glassFilter, textAlign: 'center' }}>
+                <h4 style={{ color: theme.textGray, fontSize: '13px', margin: '0 0 10px 0' }}>Disponibilidad</h4>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', flexDirection: 'column' }}>
+                    <span style={{ color: theme.danger, fontSize: '12px' }}>Horario Oficina</span>
+                    <span style={{ color: theme.primary, fontSize: '16px', fontWeight: 'bold' }}>24/7 Online</span>
+                </div>
+            </div>
+
+            <div style={{ background: theme.bgPanel, border: `1px solid rgba(167, 139, 250, 0.4)`, padding: '15px', borderRadius: '12px', backdropFilter: theme.glassFilter, textAlign: 'center' }}>
+                <h4 style={{ color: theme.textGray, fontSize: '13px', margin: '0 0 10px 0' }}>Satisfacción Padres</h4>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
+                    <span style={{ color: theme.danger, textDecoration: 'line-through', fontSize: '12px' }}>Baja (2/5)</span>
+                    <span style={{ color: theme.textGray }}>→</span>
+                    <span style={{ color: theme.accent, fontSize: '16px', fontWeight: 'bold' }}>Alta (4.5/5)</span>
+                </div>
+            </div>
+
+          </div>
+
+          {/* TUS CONCLUSIONES ORIGINALES */}
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
-              gap: "25px",
+              gap: "20px",
               width: "100%",
             }}
           >
@@ -1521,7 +1563,7 @@ const PresentationViewer = () => {
               style={{
                 background: theme.bgPanel,
                 border: theme.border,
-                padding: "30px",
+                padding: "20px",
                 borderRadius: "12px",
                 backdropFilter: theme.glassFilter,
                 border: `3px solid ${theme.primary}`,
@@ -1530,34 +1572,32 @@ const PresentationViewer = () => {
               <h4
                 style={{
                   color: theme.textDark,
-                  fontSize: "17px",
-                  margin: "0 0 10px 0",
+                  fontSize: "16px",
+                  margin: "0 0 8px 0",
                   display: "flex",
                   alignItems: "center",
                   gap: "10px",
                 }}
               >
-                <span style={{ color: theme.primary }}>✦</span> Alineación
-                Estratégica Lograda
+                <span style={{ color: theme.primary }}>✦</span> Alineación Estratégica Lograda
               </h4>
               <p
                 style={{
                   margin: 0,
-                  fontSize: "15px",
+                  fontSize: "14px",
                   color: theme.textGray,
-                  lineHeight: "1.6",
+                  lineHeight: "1.5",
                 }}
               >
-                La tecnología evoluciona de ser un centro de soporte operativo a
-                un recurso estratégico que permite escalar la matrícula escolar
-                y mejorar la calidad del servicio.
+                La tecnología evoluciona de ser un centro de soporte operativo a un recurso estratégico que permite escalar la matrícula escolar y mejorar la calidad del servicio.
               </p>
             </div>
+            
             <div
               style={{
                 background: theme.bgPanel,
                 border: theme.border,
-                padding: "30px",
+                padding: "20px",
                 borderRadius: "12px",
                 backdropFilter: theme.glassFilter,
                 border: `3px solid ${theme.accent}`,
@@ -1566,34 +1606,32 @@ const PresentationViewer = () => {
               <h4
                 style={{
                   color: theme.textDark,
-                  fontSize: "17px",
-                  margin: "0 0 10px 0",
+                  fontSize: "16px",
+                  margin: "0 0 8px 0",
                   display: "flex",
                   alignItems: "center",
                   gap: "10px",
                 }}
               >
-                <span style={{ color: theme.accent }}>✦</span> Eficiencia
-                mediante SOA
+                <span style={{ color: theme.accent }}>✦</span> Eficiencia mediante SOA
               </h4>
               <p
                 style={{
                   margin: 0,
-                  fontSize: "15px",
+                  fontSize: "14px",
                   color: theme.textGray,
-                  lineHeight: "1.6",
+                  lineHeight: "1.5",
                 }}
               >
-                La arquitectura orientada a servicios permite que eventos
-                administrativos (un pago en caja) activen funciones académicas
-                (acceso a notas) instantáneamente.
+                La arquitectura orientada a servicios permite que eventos administrativos (un pago en caja) activen funciones académicas (acceso a notas) instantáneamente.
               </p>
             </div>
+            
             <div
               style={{
                 background: theme.bgPanel,
                 border: theme.border,
-                padding: "30px",
+                padding: "20px",
                 borderRadius: "12px",
                 backdropFilter: theme.glassFilter,
                 border: `3px solid ${theme.primary}`,
@@ -1602,34 +1640,32 @@ const PresentationViewer = () => {
               <h4
                 style={{
                   color: theme.textDark,
-                  fontSize: "17px",
-                  margin: "0 0 10px 0",
+                  fontSize: "16px",
+                  margin: "0 0 8px 0",
                   display: "flex",
                   alignItems: "center",
                   gap: "10px",
                 }}
               >
-                <span style={{ color: theme.primary }}>✦</span> Consolidación de
-                la Información
+                <span style={{ color: theme.primary }}>✦</span> Consolidación de la Información
               </h4>
               <p
                 style={{
                   margin: 0,
-                  fontSize: "15px",
+                  fontSize: "14px",
                   color: theme.textGray,
-                  lineHeight: "1.6",
+                  lineHeight: "1.5",
                 }}
               >
-                El diseño asegura una base de datos única, eliminando los
-                registros paralelos de Excel y garantizando reportes precisos
-                para auditorías y la toma de decisiones.
+                El diseño asegura una base de datos única, eliminando los registros paralelos de Excel y garantizando reportes precisos para auditorías y la toma de decisiones.
               </p>
             </div>
+            
             <div
               style={{
                 background: theme.bgPanel,
                 border: theme.border,
-                padding: "30px",
+                padding: "20px",
                 borderRadius: "12px",
                 backdropFilter: theme.glassFilter,
                 border: `3px solid ${theme.accent}`,
@@ -1638,27 +1674,24 @@ const PresentationViewer = () => {
               <h4
                 style={{
                   color: theme.textDark,
-                  fontSize: "17px",
-                  margin: "0 0 10px 0",
+                  fontSize: "16px",
+                  margin: "0 0 8px 0",
                   display: "flex",
                   alignItems: "center",
                   gap: "10px",
                 }}
               >
-                <span style={{ color: theme.accent }}>✦</span> Viabilidad de
-                Transición
+                <span style={{ color: theme.accent }}>✦</span> Viabilidad de Transición
               </h4>
               <p
                 style={{
                   margin: 0,
-                  fontSize: "15px",
+                  fontSize: "14px",
                   color: theme.textGray,
-                  lineHeight: "1.6",
+                  lineHeight: "1.5",
                 }}
               >
-                El plan de paquetes de trabajo (roadmap) demuestra que la
-                transición hacia el modelo TO-BE es segura, progresiva y medible
-                operativamente sin detener el año escolar.
+                El plan de paquetes de trabajo (roadmap) demuestra que la transición hacia el modelo TO-BE es segura, progresiva y medible operativamente sin detener el año escolar.
               </p>
             </div>
           </div>
